@@ -1,11 +1,21 @@
-const { config } = require('../../config')
+const { config } = require("../../config");
+const moment = require("moment-timezone");
 
 const resolve = ({ ctx }) => {
-  const stage = config.isDevelopment ? 'dev' : 'prod'
-  ctx.reply(`hello from ${stage}`)
-}
+  ctx.replyWithPoll(
+    `ស្ថិតិចំនួនសមាជិកដែលបានបំពេញ Form តាមដានសុខភាព និងរាយការណ៍ប្រចាំថ្ងៃដើម្បីស្កាត់ COVID-19 \n${moment()
+      .locale("km")
+      .tz("Asia/Phnom_Penh")
+      .format("LL")}\nសូម 🙏 Tick លើ:
+    `,
+    ["បានបំពេញរួចហើយ", "មិនទាន់បានបំពេញ"],
+    {
+      is_anonymous: false
+    }
+  );
+};
 
 module.exports = {
   resolve,
-  command: 'hello'
-}
+  command: "poll"
+};

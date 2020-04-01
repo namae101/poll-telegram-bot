@@ -1,20 +1,10 @@
 {
   "version": 2,
-  "name": "djproducerbot",
-  "alias": [
-    "djproducerbot.now.sh"
-  ],
   "public": true,
   "builds": [
     {
       "src": "index.js",
-      "use": "@now/node-server",
-      "config": {
-        "includeFiles": [
-          "binaries/**",
-          "audios/**"
-        ]
-      }
+      "use": "@now/node-server"
     }
   ],
   "routes": [
@@ -27,5 +17,8 @@
       "src": "/.*",
       "dest": "/index.js"
     }
-  ]
+  ],
+  "env": {
+    "BOT_TOKEN": "@bot_token"
+  }
 }
