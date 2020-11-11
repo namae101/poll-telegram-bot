@@ -1,15 +1,5 @@
-# dj-telegram-bot
+# Poll Bot for Telegram
 
-## How to add more beats?
-Just create a audio file in the [/audios](https://github.com/eptaccio/dj-telegram-bot/tree/master/audios) folder without the extension. The bot will use the file name in the beats menu.
+Modified DJ Bot for Telegram to Poll generating bot. The poll is used to gather data on whether a person have finish thier submission of daily mandotary self health report.
 
-## Development
-`BOT_TOKEN=<bot-token> NODE_ENV=dev node index.js`
-
-_[You can get a token creating a new bot](https://core.telegram.org/bots#3-how-do-i-create-a-bot)_
-
-## Deployment
-`now -e BOT_TOKEN=<bot-token> --prod`
-
-## Configuring WebHook
-GET `http:<url>/start`
+Have only one command avaiable /poll to generate the poll for today to be voted on.
